@@ -1,0 +1,57 @@
+
+    <div id="carddiv"  style="width:220px; height:320px;">
+        <img src="images/{{player.color}}.png" style="position:relative; top:0px; right:0px;">
+        <img src="{{player.headshotImgUrl}}" style="position:relative; bottom:280px; left:85px; z-index:2">
+        <h5 class="md-title" style="position:relative; bottom:285px; left:5px;">{{player.lastName}}</h5>
+        <table style="border-spacing: 6px; border-collapse: separate; position:relative; bottom:300px; left:5px">
+            <tr>
+                <td>
+                    Pace
+                </td>
+                <td>
+                    {{player.pac}}
+                </td>
+                <td>
+                    Dribbling
+                </td>
+                <td>
+                    {{player.dri}}
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Shooting
+                </td>
+                <td>
+                    {{player.sho}}
+                </td>
+                <td>
+                    Physical
+                </td>
+                <td>
+                    {{player.phy}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Passing
+                </td>
+                <td>
+                    {{player.pas}}
+                </td>
+                <td>
+                    Defending
+                </td>
+                <td>
+                    {{player.def}}
+                </td>
+            </tr>
+        </table>
+        <h3 class="md-display-1" style="position:relative; bottom:560px; left:40px;">{{player.rating}}</h3>
+        <h4 class="md-headline" style="position: relative; bottom:580px; left:40px;">
+            {{player.position}}</h4>
+
+    </div>
+
+
