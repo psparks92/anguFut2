@@ -4,5 +4,6 @@ export interface IPlayer {
     firstName: string;
     lastName: string;
     rating: string;
+    country: string;
 }
 
