@@ -26,16 +26,18 @@ System.register(['angular2/core', './player-filter.pipe'], function(exports_1, c
                     this.pageTitle = 'Player List';
                     this.players = [
                         {
-                            "playerId": 1,
+                            "Id": 1,
                             "firstName": "Arjen",
                             "lastName": "Robben",
-                            "rating": "90"
+                            "rating": "90",
+                            "country": "Netherlands"
                         },
                         {
-                            "playerId": 2,
+                            "Id": 2,
                             "firstName": "Kevin",
                             "lastName": "De Bruyne",
-                            "rating": "86"
+                            "rating": "86",
+                            "country": "Belgium"
                         }
                     ];
                     this.imageWidth = 50;

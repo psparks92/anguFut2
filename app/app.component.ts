@@ -30,8 +30,8 @@ import 'rxjs/Rx';
 	})
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
-    {path: '/products' name: 'Products' component: ProductListComponent},
-    {path: '/product/:id' name: 'ProductDetail' component: ProductDetailComponent}
+    {path: '/products', name: 'Products', component: ProductListComponent},
+    {path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
 ])
 
 
