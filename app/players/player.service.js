@@ -24,20 +24,26 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
             PlayerService = (function () {
                 function PlayerService(_http) {
                     this._http = _http;
-                    this._playersUrl = 'http://peterfutapi.azurewebsites.net/players/search/';
-                    this._singlePlayerUrl = 'http://peterfutapi.azurewebsites.net/players/get/';
+                    this._playersUrl = 'http://peterfutdb.com/api/player/';
+                    this._singlePlayerUrl = 'http://peterfutdb.com/api/player/id/';
                 }
                 PlayerService.prototype.getPlayers = function () {
-                    return this._http.get(this._playersUrl + _searchName)
+                    return this._http.get(this._playersUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
-                        .catch(this.handleError);
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); });
+                    //.catch(this.handleError);
+                };
+                PlayerService.prototype.searchPlayers = function () {
+                    return this._http.get(this._playersUrl + this._searchName)
+                        .map(function (response) { return response.json(); })
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); });
+                    //.catch(this.handleError);
                 };
                 PlayerService.prototype.getPlayer = function () {
-                    return this._http.get(this._playerUrl + _playerID)
+                    return this._http.get(this._singlePlayerUrl + this._playerID)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
-                        .catch(this.handleError);
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); });
+                    //.catch(this.handleError);
                 };
                 PlayerService.prototype.handleError = function (error) {
                 };

@@ -1,33 +1,22 @@
 import {Component} from 'angular2/core';
-
+import { OnInit } from 'angular2/core';
+import {Http, Response} from 'angular2/http';
 import {IPlayer} from './player';
+import {PlayerService} from './player.service';
 import{playerFilterPipe} from './player-filter.pipe';
 @Component({
     selector: 'pm-players',
     templateUrl: 'app/players/player-list.component.html',
     styleUrls: ['app/players/player-list.component.css'],
-    pipes: [playerFilterPipe]
+    pipes: [playerFilterPipe],
+    providers: [PlayerService]
 })
 
 
-export class PlayerListComponent {
+export class PlayerListComponent implements OnInit{
     pageTitle: string = 'Player List';
-    players: IPlayer[] =  [   
-    {
-        "Id": 1,
-        "firstName": "Arjen",
-        "lastName": "Robben",
-        "rating": "90",
-        "country": "Netherlands"
-    },
-    {
-        "Id": 2,
-        "firstName": "Kevin",
-        "lastName": "De Bruyne",
-        "rating": "86",
-        "country": "Belgium"
-    }
-    ];
+    constructor(private playerService: PlayerService) {}
+    players = this.playerService.getPlayers();
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
@@ -35,5 +24,12 @@ export class PlayerListComponent {
     toggleImage(): void {
 	this.showImage = !this.showImage;
     }
+
+    getPlayers(): void {
+        this.players = this.playerService.getPlayers();
+    }
+	ngOnInit(): void {
+    this.getPlayers();
+  }
 }
 

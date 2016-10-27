@@ -1,7 +1,8 @@
 import {Component} from 'angular2/core';
-import {ProductListComponent} from './products/product-list.component';
-import {ProductDetailComponent} from './products/product-detail.component';
-import {ProductService} from './products/product.service';
+import { OnInit } from 'angular2/core';
+import {PlayerListComponent} from './players/player-list.component';
+import {PlayerDetailComponent} from './players/player-detail.component';
+import {PlayerService} from './players/player.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS,RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {WelcomeComponent} from './home/welcome.component';
@@ -16,7 +17,7 @@ import 'rxjs/Rx';
 		<a class='navbar-brand'>{{pageTitle}}</a>
                 <ul class='nav navbar-nav'>
 		    <li><a [routerLink]="['Welcome']" >Home</a></li>
-		    <li><a [routerLink]="['Products']">Product List</a></li>
+		    <li><a [routerLink]="['Players']">Player List</a></li>
 		</ul>
 	    </div>
 	</nav>
@@ -26,15 +27,15 @@ import 'rxjs/Rx';
     <div>
 	`,
 	directives: [ROUTER_DIRECTIVES],
-	providers: [ProductService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+	providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS]
 	})
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
-    {path: '/products', name: 'Products', component: ProductListComponent},
-    {path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
+    {path: '/players', name: 'Players', component: PlayerListComponent},
+    {path: '/player/:id', name: 'ProductDetail', component: PlayerDetailComponent}
 ])
 
 
 export class AppComponent {
-    pageTitle:string = 'Acme Product Management';
+    pageTitle:string = 'Peter\'s FUT DB';
     }

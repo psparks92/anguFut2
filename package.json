@@ -1,8 +1,8 @@
 {
-    "name": "product-management",
+    "name": "peterfutdb",
     "version": "1.0.0",
-    "author": "Deborah Kurata",
-    "description": "Package for the Acme Product Management sample application",
+    "author": "Peter Sparks",
+    "description": "Angular2 implementation of a web app to interact with a .net core webserver",
     "scripts": {
         "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
         "tsc": "tsc",

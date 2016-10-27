@@ -75,7 +75,7 @@
         name: string; 
     }
 
-    export interface Player
+    export interface IPlayer
     {
         rating: number; 
         itemType: string; 
