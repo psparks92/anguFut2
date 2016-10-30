@@ -4,6 +4,7 @@ import {Http, Response} from 'angular2/http';
 import {IPlayer} from './player';
 import {PlayerService} from './player.service';
 import{playerFilterPipe} from './player-filter.pipe';
+import {Observable} from 'rxjs/Observable'
 @Component({
     selector: 'pm-players',
     templateUrl: 'app/players/player-list.component.html',
@@ -26,7 +27,13 @@ export class PlayerListComponent implements OnInit{
     }
 
     getPlayers(): void {
-        this.players = this.playerService.getPlayers();
+        this.playerService.getPlayers()
+        .subscribe(
+            players => this.players = players, //Bind to view
+                                err => {
+                                    // Log errors if any
+                                    console.log(err);
+                                });;
     }
 	ngOnInit(): void {
     this.getPlayers();

@@ -38,7 +38,15 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                     this.showImage = !this.showImage;
                 };
                 PlayerListComponent.prototype.getPlayers = function () {
-                    this.players = this.playerService.getPlayers();
+                    var _this = this;
+                    this.playerService.getPlayers()
+                        .subscribe(function (players) { return _this.players = players; }, //Bind to view
+                    function (//Bind to view
+                        err) {
+                        // Log errors if any
+                        console.log(err);
+                    });
+                    ;
                 };
                 PlayerListComponent.prototype.ngOnInit = function () {
                     this.getPlayers();
