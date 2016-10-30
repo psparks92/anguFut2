@@ -15,7 +15,6 @@ export class PlayerService {
     constructor(private _http: Http) {}
     
    getPlayers() : Observable<IPlayer[]> {
-       var testres = this._http.get(this._playersUrl);
        return this._http.get(this._playersUrl)
 	.map((response: Response) => <IPlayer[]> response.json())
 	.do(data => console.log('All: ' + JSON.stringify(data)))
@@ -29,8 +28,10 @@ export class PlayerService {
    }
 
    getPlayer(id: number) : Observable<IPlayer> {
-       return this.getPlayers()
-	.map((players: IPlayer[]) => players.find(p => p.playerid = id));
+       return this._http.get(this._singlePlayerUrl + id)
+	.map((response: Response) => <IPlayer> response.json())
+	.do(data => console.log('All: ' + JSON.stringify(data)))
+	.catch(this.handleError);
    }
 
    private handleError(error: Response) {

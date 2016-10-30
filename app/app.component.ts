@@ -32,7 +32,7 @@ import 'rxjs/Rx';
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
     {path: '/players', name: 'Players', component: PlayerListComponent},
-    {path: '/player/:id', name: 'ProductDetail', component: PlayerDetailComponent}
+    {path: '/player/:id', name: 'PlayerDetail', component: PlayerDetailComponent}
 ])
 
 

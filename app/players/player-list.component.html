@@ -30,7 +30,7 @@
 		</thead>
 		<tbody>
 		<tr *ngFor='#player of players | playerFilter : nameSearch'>
-		    <td>card</td>
+		    <td><a href="/player/{{player.playerid}}">Details</a></td>
 		    <td>{{player.firstName}}</td>
 		    <td>{{player.lastName}}</td>
 		    <td>{{player.rating}}</td>

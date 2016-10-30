@@ -33,7 +33,7 @@ export class PlayerListComponent implements OnInit{
                                 err => {
                                     // Log errors if any
                                     console.log(err);
-                                });;
+                                });
     }
 	ngOnInit(): void {
     this.getPlayers();
