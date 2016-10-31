@@ -4,14 +4,14 @@ import { OnInit } from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {IPlayer} from './player';
 import {PlayerService} from './player.service';
-import{playerFilterPipe, KeysPipe} from './player-filter.pipe';
+import{playerFilterPipe, KeysPipe, AttributesPipe} from './player-filter.pipe';
 import {Observable} from 'rxjs/Observable'
 
 @Component({
     selector: 'pm-player',
     templateUrl: 'app/players/player-detail.component.html',
     providers: [PlayerService],
-    pipes : [KeysPipe]
+    pipes : [KeysPipe, AttributesPipe]
 })
 export class PlayerDetailComponent implements OnInit{
     pageTitle: string = 'Player Detail';
