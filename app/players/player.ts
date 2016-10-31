@@ -56,7 +56,7 @@
         abbrName: string; 
         imageUrls: ImageUrls2; 
         id: number; 
-        imgUrl: object; 
+        imgUrl: string; 
         name: string; 
     }
 

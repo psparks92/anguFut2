@@ -13,3 +13,16 @@ export class playerFilterPipe implements PipeTransform {
 	|| player.lastName.toLocaleLowerCase().indexOf(filter) != -1) : value;
     }
 }
+@Pipe({name: 'keys'})
+export class KeysPipe implements PipeTransform {
+    transform(value: any, args?: any[]): any[] {
+        let keys = Object.keys(value),
+            data = [];
+
+        keys.forEach(key => {
+            data.push(value[key]);
+        });
+
+        return data;
+    }
+}
