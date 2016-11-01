@@ -2,17 +2,83 @@
 	<div class='panel-heading'>
 		{{pageTitle}}
 	</div>
-	<div *ngIf='player'>
-		<img src="{{player.headshotImgUrl}}">
-		<h5 class="md-title">{{player.lastName}}</h5>
-		<table>
-			<tr *ngFor="#attribute of player.attributes | attributeDisplay">
-				<td>{{attribute}}</td>
-			</tr>
-		</table>
-		<h3 class="md-display-1" >{{player.rating}}</h3>
-		<h4 class="md-headline" >
-			{{player.position}}</h4>
+	<div *ngIf='player' class="row">
+		<div class="col-sm-3">
+			<img src="{{player.headshotImgUrl}}">
+			<h5 class="md-title">{{player.lastName}}</h5>
+			<h3 class="md-display-1">{{player.rating}}</h3>
+			<h4 class="md-headline">
+				{{player.position}}</h4>
+			<table>
+				<tr *ngFor="#attribute of player.attributes | attributeDisplay">
+					<td>{{attribute}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-sm-3">
+			<div>rating: {{player.rating}} </div>
+			<div>weight: {{player.weight}} </div>
+			<div>reactions: {{player.reactions}} </div>
+			<div>gkdiving: {{player.gkdiving}} </div>
+			<div>penalties: {{player.penalties}} </div>
+			<div>atkWorkRate: {{player.atkWorkRate}} </div>
+			<div>height: {{player.height}} </div>
+			<div>traits: {{player.traits}}</div>
+			<div>isGK: {{player.isGK}} </div>
+			<div>aggression: {{player.aggression}} </div>
+			<div>freekickaccuracy: {{player.freekickaccuracy}} </div>
+			<div>acceleration: {{player.acceleration}} </div>
+			<div>marking: {{player.marking}} </div>
+			<div>gkreflexes: {{player.gkreflexes}} </div>
+			<div>gkhandling: {{player.gkhandling}} </div>
+			<div>headingaccuracy: {{player.headingaccuracy}} </div>
+			<div>dribbling: {{player.dribbling}} </div>
+			<div>commonName: {{player.commonName}} </div>
+			<div>stamina: {{player.stamina}} </div>
+		</div>
+		<div class="col-sm-3">
+			<div>standingtackle: {{player.standingtackle}} </div>
+			<div>slidingtackle: {{player.slidingtackle}} </div>
+			<div>potential: {{player.potential}} </div>
+			<div>gkkicking: {{player.gkkicking}} </div>
+			<div>longpassing: {{player.longpassing}} </div>
+			<div>shotpower: {{player.shotpower}} </div>
+			<div>sprintspeed: {{player.sprintspeed}} </div>
+			<div>agility: {{player.agility}} </div>
+			<div>playStyle: {{player.playStyle}} </div>
+			<div>positioning: {{player.positioning}} </div>
+			<div>baseId: {{player.baseId}} </div>
+			<div>club: {{player.club}} </div>
+			<div>volleys: {{player.volleys}} </div>
+			<div>nation: {{player.nation}} </div>
+			<div>ballcontrol: {{player.ballcontrol}} </div>
+			<div>weakFoot: {{player.weakFoot}} </div>
+			<div>jumping: {{player.jumping}} </div>
+			<div>skillMoves: {{player.skillMoves}} </div>
+		</div>
+		<div class="col-sm-3">
+			<div>foot: {{player.foot}} </div>
+			<div>strength: {{player.strength}} </div>
+			<div>defWorkRate: {{player.defWorkRate}} </div>
+			<div>playerType: {{player.playerType}} </div>
+			<div>interceptions: {{player.interceptions}} </div>
+			<div>shortpassing: {{player.shortpassing}} </div>
+			<div>gkpositioning: {{player.gkpositioning}} </div>
+			<div>name: {{player.name}} </div>
+			<div>firstName: {{player.firstName}} </div>
+			<div>longshots: {{player.longshots}} </div>
+			<div>lastName: {{player.lastName}} </div>
+			<div>age: {{player.age}} </div>
+			<div>curve: {{player.curve}} </div>
+			<div>birthdate: {{player.birthdate}} </div>
+			<div>positionFull: {{player.positionFull}} </div>
+			<div>crossing: {{player.crossing}} </div>
+			<div>position: {{player.position}} </div>
+			<div>finishing: {{player.finishing}} </div>
+			<div>balance: {{player.balance}} </div>
+			<div>vision: {{player.vision}} </div>
+
+		</div>
 
 	</div>
 </div>
