@@ -1,57 +1,18 @@
-<div id="carddiv" *ngIf='player' style="width:220px; height:320px;">
-	<img src="{{player.headshotImgUrl}}" style="position:relative; bottom:280px; left:85px; z-index:2">
-	<h5 class="md-title" style="position:relative; bottom:285px; left:5px;">{{player.lastName}}</h5>
-	<table style="border-spacing: 6px; border-collapse: separate; position:relative; bottom:300px; left:5px">
-		<tr *ngFor="#attribute of player.attributes | attributeDisplay">
-            <td>{{attribute[0]}}</td>
-            <td>{{attribute[1]}}</td>
-		</tr>
-		<tr>
-			<td>
-				Pace
-			</td>
-			<td>
-				{{player.attributes[0].value}}
-			</td>
-			<td>
-				Dribbling
-			</td>
-			<td>
-				{{player.attributes}}
-			</td>
+<div class='panel panel-primary'>
+	<div class='panel-heading'>
+		{{pageTitle}}
+	</div>
+	<div *ngIf='player'>
+		<img src="{{player.headshotImgUrl}}">
+		<h5 class="md-title">{{player.lastName}}</h5>
+		<table>
+			<tr *ngFor="#attribute of player.attributes | attributeDisplay">
+				<td>{{attribute}}</td>
+			</tr>
+		</table>
+		<h3 class="md-display-1" >{{player.rating}}</h3>
+		<h4 class="md-headline" >
+			{{player.position}}</h4>
 
-		</tr>
-		<tr>
-			<td>
-				Shooting
-			</td>
-			<td>
-				{{player.attributes}}
-			</td>
-			<td>
-				Physical
-			</td>
-			<td>
-				{{player.attributes}}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Passing
-			</td>
-			<td>
-				{{player.attributes}}
-			</td>
-			<td>
-				Defending
-			</td>
-			<td>
-				{{player.attributes}}
-			</td>
-		</tr>
-	</table>
-	<h3 class="md-display-1" style="position:relative; bottom:560px; left:40px;">{{player.rating}}</h3>
-	<h4 class="md-headline" style="position: relative; bottom:580px; left:40px;">
-		{{player.position}}</h4>
-
+	</div>
 </div>

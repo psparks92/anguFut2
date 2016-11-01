@@ -60,7 +60,7 @@ System.register(['angular2/core', 'angular2/router', './player.service', './play
                         selector: 'pm-player',
                         templateUrl: 'app/players/player-detail.component.html',
                         providers: [player_service_1.PlayerService],
-                        pipes: [player_filter_pipe_1.KeysPipe]
+                        pipes: [player_filter_pipe_1.KeysPipe, player_filter_pipe_1.AttributesPipe]
                     }), 
                     __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router, player_service_1.PlayerService])
                 ], PlayerDetailComponent);

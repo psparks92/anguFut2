@@ -15,10 +15,19 @@ export class playerFilterPipe implements PipeTransform {
 }
 @Pipe({ name: 'attributeDisplay' })
 export class AttributesPipe implements PipeTransform {
-    transform(attr: Attribute): [string, number] {
-        let name = attr.name,
-            value = attr.value;
-        return [name.substring(14), value];
+    transform(attr: Attribute[]): string[] {
+            var attrs = [];
+        if (attr) {
+            for (var i = 0; i < attr.length; i+=2) {
+                let name = attr[i].name.substring(14),
+                    value = attr[i].value,
+                name2 = attr[i].name.substring(14),
+                    value2 = attr[i].value;
+
+                attrs.push(name + " " + value + "      " + name2 + " " + value2);
+            }
+        }
+        return attrs;
     }
 
 }

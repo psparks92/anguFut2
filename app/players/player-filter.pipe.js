@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var playerFilterPipe, KeysPipe;
+    var playerFilterPipe, AttributesPipe, KeysPipe;
     return {
         setters:[
             function (core_1_1) {
@@ -37,6 +37,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 return playerFilterPipe;
             }());
             exports_1("playerFilterPipe", playerFilterPipe);
+            AttributesPipe = (function () {
+                function AttributesPipe() {
+                }
+                AttributesPipe.prototype.transform = function (attr) {
+                    var attrs = [];
+                    if (attr) {
+                        for (var i = 0; i < attr.length; i += 2) {
+                            var name_1 = attr[i].name.substring(14), value = attr[i].value, name2 = attr[i].name.substring(14), value2 = attr[i].value;
+                            attrs.push(name_1 + " " + value + "      " + name2 + " " + value2);
+                        }
+                    }
+                    return attrs;
+                };
+                AttributesPipe = __decorate([
+                    core_1.Pipe({ name: 'attributeDisplay' }), 
+                    __metadata('design:paramtypes', [])
+                ], AttributesPipe);
+                return AttributesPipe;
+            }());
+            exports_1("AttributesPipe", AttributesPipe);
             KeysPipe = (function () {
                 function KeysPipe() {
                 }
