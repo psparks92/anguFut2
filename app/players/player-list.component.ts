@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import { OnInit } from 'angular2/core';
 import {Http, Response} from 'angular2/http';
-import {IPlayer} from './player';
+import {IPlayer, ISmallPlayer} from './player';
 import {PlayerService} from './player.service';
 import{playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe} from './player-filter.pipe';
 import {Observable} from 'rxjs/Observable'
@@ -33,7 +33,7 @@ export class PlayerListComponent implements OnInit{
     }
 
     getPlayers(): void {
-        this.playerService.getPlayers()
+        this.playerService.getSmallPlayers()
         .subscribe(
             players => this.players = players, //Bind to view
                                 err => {

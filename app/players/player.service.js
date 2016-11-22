@@ -36,6 +36,12 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
+                PlayerService.prototype.getSmallPlayers = function () {
+                    return this._http.get(this._playersUrl)
+                        .map(function (response) { return response.json(); })
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+                        .catch(this.handleError);
+                };
                 PlayerService.prototype.searchPlayers = function () {
                     return this._http.get(this._playersUrl + this._searchName)
                         .map(function (response) { return response.json(); })

@@ -1,6 +1,6 @@
 
 import {Injectable} from 'angular2/core';
-import {IPlayer} from './player';
+import {IPlayer, ISmallPlayer} from './player';
 import {Http, Response} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 
@@ -17,6 +17,13 @@ export class PlayerService {
    getPlayers() : Observable<IPlayer[]> {
        return this._http.get(this._playersUrl)
 	.map((response: Response) => <IPlayer[]> response.json())
+	.do(data => console.log('All: ' + JSON.stringify(data)))
+	.catch(this.handleError);
+   }
+
+   getSmallPlayers() : Observable<ISmallPlayer[]> {
+       return this._http.get(this._playersUrl)
+	.map((response: Response) => <ISmallPlayer[]> response.json())
 	.do(data => console.log('All: ' + JSON.stringify(data)))
 	.catch(this.handleError);
    }

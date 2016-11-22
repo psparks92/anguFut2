@@ -147,4 +147,26 @@
         balance: number; 
         vision: number; 
 
-}
+    }
+
+    export interface ISmallPlayer
+    {
+        rating: number; 
+        color: string; 
+        quality: string; 
+        playerid: number; 
+        commonName: string; 
+        baseId: number; 
+        club: Club; 
+        nation: Nation; 
+        skillMoves: number; 
+        attributes: Attribute[]; 
+        playerType: string; 
+        league: League; 
+        name: string; 
+        firstName: string; 
+        longshots: number; 
+        lastName: string; 
+        positionFull: string; 
+
+    }

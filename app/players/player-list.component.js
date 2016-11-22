@@ -45,7 +45,7 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                 };
                 PlayerListComponent.prototype.getPlayers = function () {
                     var _this = this;
-                    this.playerService.getPlayers()
+                    this.playerService.getSmallPlayers()
                         .subscribe(function (players) { return _this.players = players; }, //Bind to view
                     function (//Bind to view
                         err) {
