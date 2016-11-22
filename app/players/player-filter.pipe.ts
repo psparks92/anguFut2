@@ -13,6 +13,16 @@ export class playerFilterPipe implements PipeTransform {
             || player.lastName.toLocaleLowerCase().indexOf(filter) != -1) : value;
     }
 }
+@Pipe({
+    name: 'clubPlayerFilter'
+})
+export class clubPlayerFilterPipe implements PipeTransform {
+    transform(value: IPlayer[], args: string[]): IPlayer[] {
+        let filter: string = args[0] ? args[0] : null;
+        return filter ? value.filter((player: IPlayer) =>
+            player.club.clubid.toString() == args[0]) : value;
+    }
+}
 @Pipe({ name: 'attributeDisplay' })
 export class AttributesPipe implements PipeTransform {
     transform(attr: Attribute[]): string[] {

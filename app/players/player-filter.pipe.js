@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var playerFilterPipe, AttributesPipe, KeysPipe;
+    var playerFilterPipe, clubPlayerFilterPipe, AttributesPipe, KeysPipe;
     return {
         setters:[
             function (core_1_1) {
@@ -37,6 +37,24 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 return playerFilterPipe;
             }());
             exports_1("playerFilterPipe", playerFilterPipe);
+            clubPlayerFilterPipe = (function () {
+                function clubPlayerFilterPipe() {
+                }
+                clubPlayerFilterPipe.prototype.transform = function (value, args) {
+                    var filter = args[0] ? args[0] : null;
+                    return filter ? value.filter(function (player) {
+                        return player.club.clubid.toString() == args[0];
+                    }) : value;
+                };
+                clubPlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'clubPlayerFilter'
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], clubPlayerFilterPipe);
+                return clubPlayerFilterPipe;
+            }());
+            exports_1("clubPlayerFilterPipe", clubPlayerFilterPipe);
             AttributesPipe = (function () {
                 function AttributesPipe() {
                 }

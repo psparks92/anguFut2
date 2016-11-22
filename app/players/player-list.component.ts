@@ -3,13 +3,13 @@ import { OnInit } from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {IPlayer} from './player';
 import {PlayerService} from './player.service';
-import{playerFilterPipe} from './player-filter.pipe';
+import{playerFilterPipe, clubPlayerFilterPipe} from './player-filter.pipe';
 import {Observable} from 'rxjs/Observable'
 @Component({
     selector: 'pm-players',
     templateUrl: 'app/players/player-list.component.html',
     styleUrls: ['app/players/player-list.component.css'],
-    pipes: [playerFilterPipe],
+    pipes: [playerFilterPipe, clubPlayerFilterPipe],
     providers: [PlayerService]
 })
 
@@ -22,6 +22,8 @@ export class PlayerListComponent implements OnInit{
     imageMargin: number = 2;
     showImage: boolean = false;
     nameSearch: string = "";
+    clubSearch: string ="";
+    clubName: string ="";
     toggleImage(): void {
 	this.showImage = !this.showImage;
     }

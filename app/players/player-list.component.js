@@ -33,6 +33,8 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                     this.imageMargin = 2;
                     this.showImage = false;
                     this.nameSearch = "";
+                    this.clubSearch = "";
+                    this.clubName = "";
                 }
                 PlayerListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
@@ -55,7 +57,7 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                         selector: 'pm-players',
                         templateUrl: 'app/players/player-list.component.html',
                         styleUrls: ['app/players/player-list.component.css'],
-                        pipes: [player_filter_pipe_1.playerFilterPipe],
+                        pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe],
                         providers: [player_service_1.PlayerService]
                     }), 
                     __metadata('design:paramtypes', [player_service_1.PlayerService])

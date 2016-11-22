@@ -39,7 +39,7 @@
     {
         abbrName: string; 
         imageUrls: ImageUrls; 
-        id: number; 
+        clubid: number; 
         imgUrl: string; 
         name: string; 
     }

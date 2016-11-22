@@ -13,30 +13,26 @@
 	    <div class='col-md-6'>
 		<h3>Filtered by: {{nameSearch}}</h3>
 	    </div>
+	    <div class='col-md-6' *ngIf="clubSearch != ''">
+		<h3>Club: <button class="btn btn-primary" (click)="clubSearch = ''; clubName =''">{{clubName}} x</button></h3>
+	    </div>
 	</div>
 	<div class='table-responsive'>
 	    <table *ngIf='players && players.length' class='table'>
 		<thead>
 		    <tr>
-			<th>
-			    <button class='btn btn-primary'>
-				Show Image
-			    </button>
-			</th>
-			<th>First Name</th>
-			<th>Last Name</th>
+			<th>Name</th>
+			<th>Club</th>
 			<th>Rating</th>
 		    </tr>
 		</thead>
 		<tbody>
-		<tr *ngFor='#player of players | playerFilter : nameSearch'>
-		    <td><a href="/player/{{player.playerid}}">Details</a></td>
-		    <td>{{player.firstName}}</td>
-		    <td>{{player.lastName}}</td>
+		<tr *ngFor='#player of players | playerFilter : nameSearch | clubPlayerFilter: clubSearch'>
+			
+		    <td><a href="/player/{{player.playerid}}">{{player.firstName}} {{player.lastName}}</a></td> 
+		    <td><button class="btn btn-default" (click)="clubSearch = player.club.clubid; clubName = player.club.name">{{player.club.name}}</button></td>
 		    <td>{{player.rating}}</td>
 		</tr>
-		
-
 		</tbody>
 	    </table>
 	</div>
