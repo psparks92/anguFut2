@@ -3,13 +3,13 @@ import { OnInit } from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {IPlayer} from './player';
 import {PlayerService} from './player.service';
-import{playerFilterPipe, clubPlayerFilterPipe} from './player-filter.pipe';
+import{playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe} from './player-filter.pipe';
 import {Observable} from 'rxjs/Observable'
 @Component({
     selector: 'pm-players',
     templateUrl: 'app/players/player-list.component.html',
     styleUrls: ['app/players/player-list.component.css'],
-    pipes: [playerFilterPipe, clubPlayerFilterPipe],
+    pipes: [playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe],
     providers: [PlayerService]
 })
 
@@ -24,6 +24,10 @@ export class PlayerListComponent implements OnInit{
     nameSearch: string = "";
     clubSearch: string ="";
     clubName: string ="";
+    nationSearch: string ="";
+    nationName: string ="";
+    leagueSearch: string ="";
+    leagueName: string ="";
     toggleImage(): void {
 	this.showImage = !this.showImage;
     }

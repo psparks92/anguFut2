@@ -10,11 +10,17 @@
 	    </div>
 	</div>
 	<div class='row'>
-	    <div class='col-md-6'>
+	    <div class='col-md-3'>
 		<h3>Filtered by: {{nameSearch}}</h3>
 	    </div>
-	    <div class='col-md-6' *ngIf="clubSearch != ''">
+	    <div class='col-md-3' *ngIf="clubSearch != ''">
 		<h3>Club: <button class="btn btn-primary" (click)="clubSearch = ''; clubName =''">{{clubName}} x</button></h3>
+	    </div>
+	    <div class='col-md-3' *ngIf="nationSearch != ''">
+		<h3>Nation: <button class="btn btn-primary" (click)="nationSearch = ''; nationName =''">{{nationName}} x</button></h3>
+	    </div>
+	    <div class='col-md-3' *ngIf="leagueSearch != ''">
+		<h3>League: <button class="btn btn-primary" (click)="leagueSearch = ''; leagueName =''">{{leagueName}} x</button></h3>
 	    </div>
 	</div>
 	<div class='table-responsive'>
@@ -22,14 +28,18 @@
 		<thead>
 		    <tr>
 			<th>Name</th>
+			<th>Nation</th>
+			<th>League</th>
 			<th>Club</th>
 			<th>Rating</th>
 		    </tr>
 		</thead>
 		<tbody>
-		<tr *ngFor='#player of players | playerFilter : nameSearch | clubPlayerFilter: clubSearch'>
+		<tr *ngFor='#player of players | playerFilter : nameSearch | clubPlayerFilter: clubSearch | leaguePlayerFilter: leagueSearch | nationPlayerFilter: nationSearch'>
 			
 		    <td><a href="/player/{{player.playerid}}">{{player.firstName}} {{player.lastName}}</a></td> 
+		    <td><button class="btn btn-default" (click)="nationSearch = player.nation.nationid; nationName = player.nation.name">{{player.nation.abbrName}}</button></td>
+		    <td><button class="btn btn-default" (click)="leagueSearch = player.league.leagueid; leagueName = player.league.name">{{player.league.abbrName}}</button></td>
 		    <td><button class="btn btn-default" (click)="clubSearch = player.club.clubid; clubName = player.club.name">{{player.club.name}}</button></td>
 		    <td>{{player.rating}}</td>
 		</tr>

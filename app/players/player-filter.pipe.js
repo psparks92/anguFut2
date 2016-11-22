@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var playerFilterPipe, clubPlayerFilterPipe, AttributesPipe, KeysPipe;
+    var playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe, AttributesPipe, KeysPipe;
     return {
         setters:[
             function (core_1_1) {
@@ -55,6 +55,42 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 return clubPlayerFilterPipe;
             }());
             exports_1("clubPlayerFilterPipe", clubPlayerFilterPipe);
+            leaguePlayerFilterPipe = (function () {
+                function leaguePlayerFilterPipe() {
+                }
+                leaguePlayerFilterPipe.prototype.transform = function (value, args) {
+                    var filter = args[0] ? args[0] : null;
+                    return filter ? value.filter(function (player) {
+                        return player.league.leagueid.toString() == args[0];
+                    }) : value;
+                };
+                leaguePlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'leaguePlayerFilter'
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], leaguePlayerFilterPipe);
+                return leaguePlayerFilterPipe;
+            }());
+            exports_1("leaguePlayerFilterPipe", leaguePlayerFilterPipe);
+            nationPlayerFilterPipe = (function () {
+                function nationPlayerFilterPipe() {
+                }
+                nationPlayerFilterPipe.prototype.transform = function (value, args) {
+                    var filter = args[0] ? args[0] : null;
+                    return filter ? value.filter(function (player) {
+                        return player.nation.nationid.toString() == args[0];
+                    }) : value;
+                };
+                nationPlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'nationPlayerFilter'
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], nationPlayerFilterPipe);
+                return nationPlayerFilterPipe;
+            }());
+            exports_1("nationPlayerFilterPipe", nationPlayerFilterPipe);
             AttributesPipe = (function () {
                 function AttributesPipe() {
                 }

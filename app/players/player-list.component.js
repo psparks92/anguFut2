@@ -35,6 +35,10 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                     this.nameSearch = "";
                     this.clubSearch = "";
                     this.clubName = "";
+                    this.nationSearch = "";
+                    this.nationName = "";
+                    this.leagueSearch = "";
+                    this.leagueName = "";
                 }
                 PlayerListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
@@ -57,7 +61,7 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                         selector: 'pm-players',
                         templateUrl: 'app/players/player-list.component.html',
                         styleUrls: ['app/players/player-list.component.css'],
-                        pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe],
+                        pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe, player_filter_pipe_1.leaguePlayerFilterPipe, player_filter_pipe_1.nationPlayerFilterPipe],
                         providers: [player_service_1.PlayerService]
                     }), 
                     __metadata('design:paramtypes', [player_service_1.PlayerService])

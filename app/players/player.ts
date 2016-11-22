@@ -55,7 +55,7 @@
     {
         abbrName: string; 
         imageUrls: ImageUrls2; 
-        id: number; 
+        nationid: number; 
         imgUrl: string; 
         name: string; 
     }
@@ -70,7 +70,7 @@
     export interface League
     {
         abbrName: string; 
-        id: number; 
+        leagueid: number; 
         imgUrl: string; 
         name: string; 
     }
