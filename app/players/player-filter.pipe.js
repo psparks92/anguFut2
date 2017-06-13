@@ -1,23 +1,20 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(["angular2/core"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var __metadata = (this && this.__metadata) || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
-    var core_1;
-    var playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe, AttributesPipe, KeysPipe;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, playerFilterPipe, clubPlayerFilterPipe, leaguePlayerFilterPipe, nationPlayerFilterPipe, AttributesPipe, KeysPipe;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             playerFilterPipe = (function () {
                 function playerFilterPipe() {
                 }
@@ -28,14 +25,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             || player.lastName.toLocaleLowerCase().indexOf(filter) != -1;
                     }) : value;
                 };
-                playerFilterPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'playerFilter'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], playerFilterPipe);
                 return playerFilterPipe;
             }());
+            playerFilterPipe = __decorate([
+                core_1.Pipe({
+                    name: 'playerFilter'
+                })
+            ], playerFilterPipe);
             exports_1("playerFilterPipe", playerFilterPipe);
             clubPlayerFilterPipe = (function () {
                 function clubPlayerFilterPipe() {
@@ -46,14 +42,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         return player.club.clubid.toString() == args[0];
                     }) : value;
                 };
-                clubPlayerFilterPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'clubPlayerFilter'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], clubPlayerFilterPipe);
                 return clubPlayerFilterPipe;
             }());
+            clubPlayerFilterPipe = __decorate([
+                core_1.Pipe({
+                    name: 'clubPlayerFilter'
+                })
+            ], clubPlayerFilterPipe);
             exports_1("clubPlayerFilterPipe", clubPlayerFilterPipe);
             leaguePlayerFilterPipe = (function () {
                 function leaguePlayerFilterPipe() {
@@ -64,14 +59,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         return player.league.leagueid.toString() == args[0];
                     }) : value;
                 };
-                leaguePlayerFilterPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'leaguePlayerFilter'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], leaguePlayerFilterPipe);
                 return leaguePlayerFilterPipe;
             }());
+            leaguePlayerFilterPipe = __decorate([
+                core_1.Pipe({
+                    name: 'leaguePlayerFilter'
+                })
+            ], leaguePlayerFilterPipe);
             exports_1("leaguePlayerFilterPipe", leaguePlayerFilterPipe);
             nationPlayerFilterPipe = (function () {
                 function nationPlayerFilterPipe() {
@@ -82,14 +76,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         return player.nation.nationid.toString() == args[0];
                     }) : value;
                 };
-                nationPlayerFilterPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'nationPlayerFilter'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], nationPlayerFilterPipe);
                 return nationPlayerFilterPipe;
             }());
+            nationPlayerFilterPipe = __decorate([
+                core_1.Pipe({
+                    name: 'nationPlayerFilter'
+                })
+            ], nationPlayerFilterPipe);
             exports_1("nationPlayerFilterPipe", nationPlayerFilterPipe);
             AttributesPipe = (function () {
                 function AttributesPipe() {
@@ -104,12 +97,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                     return attrs;
                 };
-                AttributesPipe = __decorate([
-                    core_1.Pipe({ name: 'attributeDisplay' }), 
-                    __metadata('design:paramtypes', [])
-                ], AttributesPipe);
                 return AttributesPipe;
             }());
+            AttributesPipe = __decorate([
+                core_1.Pipe({ name: 'attributeDisplay' })
+            ], AttributesPipe);
             exports_1("AttributesPipe", AttributesPipe);
             KeysPipe = (function () {
                 function KeysPipe() {
@@ -121,14 +113,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     });
                     return data;
                 };
-                KeysPipe = __decorate([
-                    core_1.Pipe({ name: 'keys' }), 
-                    __metadata('design:paramtypes', [])
-                ], KeysPipe);
                 return KeysPipe;
             }());
+            KeysPipe = __decorate([
+                core_1.Pipe({ name: 'keys' })
+            ], KeysPipe);
             exports_1("KeysPipe", KeysPipe);
         }
-    }
+    };
 });
 //# sourceMappingURL=player-filter.pipe.js.map

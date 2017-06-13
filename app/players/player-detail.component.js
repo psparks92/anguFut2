@@ -1,6 +1,5 @@
-System.register(['angular2/core', 'angular2/router', './player.service', './player-filter.pipe'], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./player.service", "./player-filter.pipe"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['angular2/core', 'angular2/router', './player.service', './play
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, player_service_1, player_filter_pipe_1;
-    var PlayerDetailComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, router_1, player_service_1, player_filter_pipe_1, PlayerDetailComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -25,15 +24,16 @@ System.register(['angular2/core', 'angular2/router', './player.service', './play
             },
             function (player_filter_pipe_1_1) {
                 player_filter_pipe_1 = player_filter_pipe_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             PlayerDetailComponent = (function () {
-                function PlayerDetailComponent(_routeParams, _router, playerService) {
+                function PlayerDetailComponent(_routeParams, _router, _playerService) {
                     this._routeParams = _routeParams;
                     this._router = _router;
-                    this.playerService = playerService;
+                    this._playerService = _playerService;
                     this.pageTitle = 'Player Detail';
-                    this.player = this.playerService.getPlayer(this.id);
+                    this.player = this._playerService.getPlayer(this.id);
                     var id = +this._routeParams.get('id');
                     this.id = +this._routeParams.get('id');
                     this.pageTitle += ": " + id;
@@ -43,31 +43,32 @@ System.register(['angular2/core', 'angular2/router', './player.service', './play
                 };
                 PlayerDetailComponent.prototype.getPlayer = function () {
                     var _this = this;
-                    this.playerService.getPlayer(this.id)
+                    this._playerService.getPlayer(this.id)
                         .subscribe(function (player) { return _this.player = player; }, //Bind to view
                     function (//Bind to view
                         err) {
                         // Log errors if any
                         console.log(err);
                     });
-                    ;
                 };
                 PlayerDetailComponent.prototype.ngOnInit = function () {
                     this.getPlayer();
                 };
-                PlayerDetailComponent = __decorate([
-                    core_1.Component({
-                        selector: 'pm-player',
-                        templateUrl: 'app/players/player-detail.component.html',
-                        providers: [player_service_1.PlayerService],
-                        pipes: [player_filter_pipe_1.KeysPipe, player_filter_pipe_1.AttributesPipe]
-                    }), 
-                    __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router, player_service_1.PlayerService])
-                ], PlayerDetailComponent);
                 return PlayerDetailComponent;
             }());
+            PlayerDetailComponent = __decorate([
+                core_1.Component({
+                    selector: 'pm-player',
+                    templateUrl: 'app/players/player-detail.component.html',
+                    providers: [player_service_1.PlayerService],
+                    pipes: [player_filter_pipe_1.KeysPipe, player_filter_pipe_1.AttributesPipe]
+                }),
+                __metadata("design:paramtypes", [router_1.RouteParams,
+                    router_1.Router,
+                    player_service_1.PlayerService])
+            ], PlayerDetailComponent);
             exports_1("PlayerDetailComponent", PlayerDetailComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=player-detail.component.js.map

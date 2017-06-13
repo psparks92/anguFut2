@@ -1,6 +1,5 @@
-System.register(['angular2/core', './player.service', './player-filter.pipe'], function(exports_1, context_1) {
+System.register(["angular2/core", "./player.service", "./player-filter.pipe"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, player_service_1, player_filter_pipe_1;
-    var PlayerListComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, player_service_1, player_filter_pipe_1, PlayerListComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -22,13 +21,14 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
             },
             function (player_filter_pipe_1_1) {
                 player_filter_pipe_1 = player_filter_pipe_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             PlayerListComponent = (function () {
                 function PlayerListComponent(playerService) {
                     this.playerService = playerService;
                     this.pageTitle = 'Player List';
-                    this.players = this.playerService.getPlayers();
+                    this.players = this.playerService.getSmallPlayers();
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
@@ -56,20 +56,20 @@ System.register(['angular2/core', './player.service', './player-filter.pipe'], f
                 PlayerListComponent.prototype.ngOnInit = function () {
                     this.getPlayers();
                 };
-                PlayerListComponent = __decorate([
-                    core_1.Component({
-                        selector: 'pm-players',
-                        templateUrl: 'app/players/player-list.component.html',
-                        styleUrls: ['app/players/player-list.component.css'],
-                        pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe, player_filter_pipe_1.leaguePlayerFilterPipe, player_filter_pipe_1.nationPlayerFilterPipe],
-                        providers: [player_service_1.PlayerService]
-                    }), 
-                    __metadata('design:paramtypes', [player_service_1.PlayerService])
-                ], PlayerListComponent);
                 return PlayerListComponent;
             }());
+            PlayerListComponent = __decorate([
+                core_1.Component({
+                    selector: 'pm-players',
+                    templateUrl: 'app/players/player-list.component.html',
+                    styleUrls: ['app/players/player-list.component.css'],
+                    pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe, player_filter_pipe_1.leaguePlayerFilterPipe, player_filter_pipe_1.nationPlayerFilterPipe],
+                    providers: [player_service_1.PlayerService]
+                }),
+                __metadata("design:paramtypes", [player_service_1.PlayerService])
+            ], PlayerListComponent);
             exports_1("PlayerListComponent", PlayerListComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=player-list.component.js.map

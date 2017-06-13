@@ -8,8 +8,8 @@ import {Observable} from 'rxjs/Observable';
 
 export class PlayerService {
 
-    private _playersUrl = 'http://peterfutdb.com/api/players/';
-    private _singlePlayerUrl = 'http://peterfutdb.com/api/player/';
+    private _playersUrl = 'http://api.peterfutdb.com/api/players/';
+    private _singlePlayerUrl = 'http://api.peterfutdb.com/api/player/';
     private _playerID: number;
     private _searchName: string;
     constructor(private _http: Http) {}
@@ -36,8 +36,7 @@ export class PlayerService {
 
    getPlayer(id: number) : Observable<IPlayer> {
        return this._http.get(this._singlePlayerUrl + id)
-	.map((response: Response) => <IPlayer> response.json())
-	.do(data => console.log('All: ' + JSON.stringify(data)))
+       .map((response: Response) => <IPlayer> response.json())
 	.catch(this.handleError);
    }
 

@@ -17,7 +17,7 @@ import {Observable} from 'rxjs/Observable'
 export class PlayerListComponent implements OnInit{
     pageTitle: string = 'Player List';
     constructor(private playerService: PlayerService) {}
-    players = this.playerService.getPlayers();
+    players = this.playerService.getSmallPlayers();
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;

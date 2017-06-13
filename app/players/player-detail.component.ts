@@ -18,25 +18,25 @@ export class PlayerDetailComponent implements OnInit{
     id:number;
     constructor(private _routeParams: RouteParams,
                 private _router: Router,
-                private playerService: PlayerService) {
+                private _playerService: PlayerService) {
           let id = +this._routeParams.get('id');
           this.id = +this._routeParams.get('id');
           this.pageTitle += `: ${id}`;
     }
-    player = this.playerService.getPlayer(this.id)
+    player = this._playerService.getPlayer(this.id)
 
     onBack(): void {
         this._router.navigate(['Players']);
     }
 
     getPlayer(): void {
-        this.playerService.getPlayer(this.id)
+        this._playerService.getPlayer(this.id)
         .subscribe(
             player => this.player = player, //Bind to view
                                 err => {
                                     // Log errors if any
                                     console.log(err);
-                                });;
+                                });
     }
     
 	ngOnInit(): void {
