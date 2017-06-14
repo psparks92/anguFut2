@@ -4,7 +4,7 @@
     "author": "Peter Sparks",
     "description": "Angular2 implementation of a web app to interact with a .net core webserver",
     "scripts": {
-        "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
+        "start": "concurrently \"npm run tsc:w\" \"angular-http-server -p 8080\"",
         "tsc": "tsc",
         "tsc:w": "tsc -w",
         "lite": "lite-server",

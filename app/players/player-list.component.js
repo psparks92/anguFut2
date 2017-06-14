@@ -56,18 +56,18 @@ System.register(["angular2/core", "./player.service", "./player-filter.pipe"], f
                 PlayerListComponent.prototype.ngOnInit = function () {
                     this.getPlayers();
                 };
+                PlayerListComponent = __decorate([
+                    core_1.Component({
+                        selector: 'pm-players',
+                        templateUrl: 'app/players/player-list.component.html',
+                        styleUrls: ['app/players/player-list.component.css'],
+                        pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe, player_filter_pipe_1.leaguePlayerFilterPipe, player_filter_pipe_1.nationPlayerFilterPipe],
+                        providers: [player_service_1.PlayerService]
+                    }),
+                    __metadata("design:paramtypes", [player_service_1.PlayerService])
+                ], PlayerListComponent);
                 return PlayerListComponent;
             }());
-            PlayerListComponent = __decorate([
-                core_1.Component({
-                    selector: 'pm-players',
-                    templateUrl: 'app/players/player-list.component.html',
-                    styleUrls: ['app/players/player-list.component.css'],
-                    pipes: [player_filter_pipe_1.playerFilterPipe, player_filter_pipe_1.clubPlayerFilterPipe, player_filter_pipe_1.leaguePlayerFilterPipe, player_filter_pipe_1.nationPlayerFilterPipe],
-                    providers: [player_service_1.PlayerService]
-                }),
-                __metadata("design:paramtypes", [player_service_1.PlayerService])
-            ], PlayerListComponent);
             exports_1("PlayerListComponent", PlayerListComponent);
         }
     };

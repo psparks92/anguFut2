@@ -57,12 +57,12 @@ System.register(["angular2/core", "angular2/http", "rxjs/Observable"], function 
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
+                PlayerService = __decorate([
+                    core_1.Injectable(),
+                    __metadata("design:paramtypes", [http_1.Http])
+                ], PlayerService);
                 return PlayerService;
             }());
-            PlayerService = __decorate([
-                core_1.Injectable(),
-                __metadata("design:paramtypes", [http_1.Http])
-            ], PlayerService);
             exports_1("PlayerService", PlayerService);
         }
     };

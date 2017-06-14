@@ -25,13 +25,13 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                             || player.lastName.toLocaleLowerCase().indexOf(filter) != -1;
                     }) : value;
                 };
+                playerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'playerFilter'
+                    })
+                ], playerFilterPipe);
                 return playerFilterPipe;
             }());
-            playerFilterPipe = __decorate([
-                core_1.Pipe({
-                    name: 'playerFilter'
-                })
-            ], playerFilterPipe);
             exports_1("playerFilterPipe", playerFilterPipe);
             clubPlayerFilterPipe = (function () {
                 function clubPlayerFilterPipe() {
@@ -42,13 +42,13 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                         return player.club.clubid.toString() == args[0];
                     }) : value;
                 };
+                clubPlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'clubPlayerFilter'
+                    })
+                ], clubPlayerFilterPipe);
                 return clubPlayerFilterPipe;
             }());
-            clubPlayerFilterPipe = __decorate([
-                core_1.Pipe({
-                    name: 'clubPlayerFilter'
-                })
-            ], clubPlayerFilterPipe);
             exports_1("clubPlayerFilterPipe", clubPlayerFilterPipe);
             leaguePlayerFilterPipe = (function () {
                 function leaguePlayerFilterPipe() {
@@ -59,13 +59,13 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                         return player.league.leagueid.toString() == args[0];
                     }) : value;
                 };
+                leaguePlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'leaguePlayerFilter'
+                    })
+                ], leaguePlayerFilterPipe);
                 return leaguePlayerFilterPipe;
             }());
-            leaguePlayerFilterPipe = __decorate([
-                core_1.Pipe({
-                    name: 'leaguePlayerFilter'
-                })
-            ], leaguePlayerFilterPipe);
             exports_1("leaguePlayerFilterPipe", leaguePlayerFilterPipe);
             nationPlayerFilterPipe = (function () {
                 function nationPlayerFilterPipe() {
@@ -76,13 +76,13 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                         return player.nation.nationid.toString() == args[0];
                     }) : value;
                 };
+                nationPlayerFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'nationPlayerFilter'
+                    })
+                ], nationPlayerFilterPipe);
                 return nationPlayerFilterPipe;
             }());
-            nationPlayerFilterPipe = __decorate([
-                core_1.Pipe({
-                    name: 'nationPlayerFilter'
-                })
-            ], nationPlayerFilterPipe);
             exports_1("nationPlayerFilterPipe", nationPlayerFilterPipe);
             AttributesPipe = (function () {
                 function AttributesPipe() {
@@ -97,11 +97,11 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                     }
                     return attrs;
                 };
+                AttributesPipe = __decorate([
+                    core_1.Pipe({ name: 'attributeDisplay' })
+                ], AttributesPipe);
                 return AttributesPipe;
             }());
-            AttributesPipe = __decorate([
-                core_1.Pipe({ name: 'attributeDisplay' })
-            ], AttributesPipe);
             exports_1("AttributesPipe", AttributesPipe);
             KeysPipe = (function () {
                 function KeysPipe() {
@@ -113,11 +113,11 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                     });
                     return data;
                 };
+                KeysPipe = __decorate([
+                    core_1.Pipe({ name: 'keys' })
+                ], KeysPipe);
                 return KeysPipe;
             }());
-            KeysPipe = __decorate([
-                core_1.Pipe({ name: 'keys' })
-            ], KeysPipe);
             exports_1("KeysPipe", KeysPipe);
         }
     };

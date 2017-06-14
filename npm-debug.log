@@ -1,31 +1,28 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start' ]
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'angular-http-server',
+1 verbose cli   '-p',
+1 verbose cli   '8080' ]
 2 info using npm@2.15.11
 3 info using node@v4.7.2
-4 verbose stack Error: Failed to parse json
-4 verbose stack Trailing comma in object at 13:5
-4 verbose stack     },
-4 verbose stack     ^
-4 verbose stack     at parseError (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:390:11)
-4 verbose stack     at parseJson (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:79:23)
-4 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:48:5
+4 verbose stack Error: missing script: angular-http-server
+4 verbose stack     at run (/usr/lib/node_modules/npm/lib/run-script.js:142:19)
+4 verbose stack     at /usr/lib/node_modules/npm/lib/run-script.js:58:5
+4 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:356:5
+4 verbose stack     at checkBinReferences_ (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:320:45)
+4 verbose stack     at final (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:354:3)
+4 verbose stack     at then (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:124:5)
+4 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:311:12
 4 verbose stack     at /usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
 4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:380:3)
 5 verbose cwd /home/ubuntu/git/anguFut2
 6 error Linux 3.13.0-103-generic
-7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
+7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "angular-http-server" "-p" "8080"
 8 error node v4.7.2
 9 error npm  v2.15.11
-10 error file /home/ubuntu/git/anguFut2/package.json
-11 error code EJSONPARSE
-12 error Failed to parse json
-12 error Trailing comma in object at 13:5
-12 error     },
-12 error     ^
-13 error File: /home/ubuntu/git/anguFut2/package.json
-14 error Failed to parse package.json data.
-14 error package.json must be actual JSON, not just JavaScript.
-14 error
-14 error This is not a bug in npm.
-14 error Tell the package author to fix their package.json file. JSON.parse
-15 verbose exit [ 1, true ]
+10 error missing script: angular-http-server
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]

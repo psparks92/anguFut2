@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import { OnInit } from 'angular2/core';
 import {PlayerListComponent} from './players/player-list.component';
 import {PlayerDetailComponent} from './players/player-detail.component';
+import {PlayerCardComponent} from './players/player-card.component';
 import {PlayerService} from './players/player.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS,RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
@@ -32,7 +33,8 @@ import 'rxjs/Rx';
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
     {path: '/players', name: 'Players', component: PlayerListComponent},
-    {path: '/player/:id', name: 'PlayerDetail', component: PlayerDetailComponent}
+    {path: '/player/:id', name: 'PlayerDetail', component: PlayerDetailComponent},
+    {path: '/playercard/:id', name: 'PlayerCard', component: PlayerCardComponent}
 ])
 
 

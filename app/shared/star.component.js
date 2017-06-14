@@ -28,23 +28,23 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                 StarComponent.prototype.OnClick = function () {
                     this.notify.emit('clicked!');
                 };
+                __decorate([
+                    core_1.Input(),
+                    __metadata("design:type", Number)
+                ], StarComponent.prototype, "rating", void 0);
+                __decorate([
+                    core_1.Output(),
+                    __metadata("design:type", core_1.EventEmitter)
+                ], StarComponent.prototype, "notify", void 0);
+                StarComponent = __decorate([
+                    core_1.Component({
+                        selector: 'ai-star',
+                        templateUrl: 'app/shared/star.component.html',
+                        styleUrls: ['app/shared/star.component.css']
+                    })
+                ], StarComponent);
                 return StarComponent;
             }());
-            __decorate([
-                core_1.Input(),
-                __metadata("design:type", Number)
-            ], StarComponent.prototype, "rating", void 0);
-            __decorate([
-                core_1.Output(),
-                __metadata("design:type", core_1.EventEmitter)
-            ], StarComponent.prototype, "notify", void 0);
-            StarComponent = __decorate([
-                core_1.Component({
-                    selector: 'ai-star',
-                    templateUrl: 'app/shared/star.component.html',
-                    styleUrls: ['app/shared/star.component.css']
-                })
-            ], StarComponent);
             exports_1("StarComponent", StarComponent);
         }
     };

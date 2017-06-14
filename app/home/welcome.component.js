@@ -19,13 +19,13 @@ System.register(["angular2/core"], function (exports_1, context_1) {
                 function WelcomeComponent() {
                     this.pageTitle = "Peter's FUT DB";
                 }
+                WelcomeComponent = __decorate([
+                    core_1.Component({
+                        templateUrl: 'app/home/welcome.component.html'
+                    })
+                ], WelcomeComponent);
                 return WelcomeComponent;
             }());
-            WelcomeComponent = __decorate([
-                core_1.Component({
-                    templateUrl: 'app/home/welcome.component.html'
-                })
-            ], WelcomeComponent);
             exports_1("WelcomeComponent", WelcomeComponent);
         }
     };
